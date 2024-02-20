@@ -10,7 +10,3 @@ const CartWidget = () => {
 }
 
 export default CartWidget;
-
-
-
- /// preguntar por los estilos en react
