@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import CartWidget from "./CartWidget";
 
@@ -13,12 +14,12 @@ const NavBar = () => {
                 <div className="ml-20 flex items-center justify-center flex-grow">
                     <ul className="space-x-4 flex ml-auto text-gray-700">
                         <li>
-                            <button className="font-semibold hover:text-customBlue">Promo protectores</button>
+                        <Link to="/"><button className="font-semibold hover:text-customBlue">Promo protectores</button></Link>
                         </li>
-                        <li className="border-r pr-0"><span></span></li>
+                        <li className="border-r pr-2"></li>
                         <li><CartWidget /></li>
-                        <li className="border-r pr-0"><span></span></li>
-                        <li><button className="hover:text-customBlue">Contacto</button></li>
+                        <li className="border-r pr-2"></li>
+                        <Link to="/contacto" className="hover:text-customBlue">Contacto</Link>
                     </ul>
                 </div>
             </div>

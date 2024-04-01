@@ -23,7 +23,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
         <button className='button border border-gray-300 rounded px-4 py-2 ml-2' onClick={increment}>+</button>
       </div>
       <div className="text-center mt-4">
-        <button className='button bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' onClick={() => onAdd(quantity)} disabled={quantity >= stock}>
+        <button className='button bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' onClick={() => onAdd(quantity)} disabled={quantity > stock}>
           Agregar al carrito
         </button>
       </div>
@@ -32,4 +32,3 @@ const ItemCount = ({ stock, initial, onAdd }) => {
 };
 
 export default ItemCount;
-

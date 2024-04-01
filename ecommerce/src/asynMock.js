@@ -1,4 +1,4 @@
-const products = [
+/*const products = [
     {
         id:'1',
         name:'Banana Boat',
@@ -95,7 +95,7 @@ const products = [
     {
       id:'8',
       name:'Dermaglos protector corporal',
-      price:' 3142,35',
+      price:'3142,35',
       category:'Protector Solar Corporal',
       img:'../src/assets/protectorescorporales/dermagloscorporal.jpg',
       stock:'7',
@@ -185,4 +185,4 @@ export const getProductsByCategory = (category) => {
           }
       }, 500);
   });
-};
+};*/

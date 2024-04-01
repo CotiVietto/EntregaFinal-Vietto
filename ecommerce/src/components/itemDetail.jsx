@@ -1,7 +1,23 @@
-import React from 'react';
+import React, { useState, useContext } from 'react'; 
 import ItemCount from './ItemCount';
+import { Link } from 'react-router-dom';
+import { CartContext } from '../context/CartContext';
 
-const ItemDetail = ({ name, img, description, price, stock }) => {
+const ItemDetail = ({ id, name, img, description, price, stock }) => {
+  const [quantityAdded, setQuantityAdded] = useState(0);
+
+  const { addItem } = useContext(CartContext);
+
+  const handleOnAdd = (quantity) => {
+    setQuantityAdded(quantity)
+
+    const item = {
+      id, name, price
+    }
+
+    addItem (item, quantity)
+  };
+
   return (
     <article className='CardItem max-w-xl mx-auto p-4 bg-white rounded-lg shadow-lg flex'>
       <picture className="flex-shrink-0 mr-4">
@@ -21,14 +37,25 @@ const ItemDetail = ({ name, img, description, price, stock }) => {
             Descripción: {description}
           </p>
         </section>
-        <footer className='ItemFooter mt-4'>
-          <ItemCount initial={1} stock={stock} onAdd={() => console.log('Cantidad agregada')} />
+
+
+        <footer className='ItemFooter mt-4 flex justify-center'>
+          {
+            quantityAdded > 0 ? (
+              <Link to='/cart' className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-3 rounded inline-block text-sm">Terminar compra</Link>
+            ) : (
+            <ItemCount initial={1} stock={stock} onAdd={handleOnAdd} />
+          )
+          } 
         </footer>
+
       </div>
+      
     </article>
   );
 }
 
 export default ItemDetail;
+
 
 
