@@ -1,11 +1,10 @@
 import React, { useState, useContext } from 'react';
-import { CartContext } from '../context/CartContext'; // Asegúrate de importar tu contexto de carrito aquí
-
+import { CartContext } from '../context/CartContext';
 const CheckOutForm = ({ onConfirm }) => {
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
-    const { clearCart } = useContext(CartContext); // Obtén la función para limpiar el carrito del contexto
+    const { clearCart } = useContext(CartContext); 
 
     const handleConfirm = (event) => {
         event.preventDefault();
@@ -18,7 +17,6 @@ const CheckOutForm = ({ onConfirm }) => {
 
         onConfirm(userData);
 
-        // Llama a la función para limpiar el carrito después de confirmar la orden
         clearCart();
     };
 
