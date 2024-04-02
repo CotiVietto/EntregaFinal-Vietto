@@ -65,9 +65,9 @@ const ItemList = () => {
             img={product.img}
             name={product.name}
             price={product.price}
-            off={product.off} // Pasa el descuento como una propiedad al componente Item
             category={product.category}
             filter={product.filter}
+            off={product.off}
           />
         ))}
       </div>

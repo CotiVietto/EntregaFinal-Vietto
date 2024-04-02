@@ -6,7 +6,7 @@ import { collection, Timestamp, getFirestore, addDoc } from 'firebase/firestore'
 const CheckOut = () => {
     const [loading, setLoading] = useState(false);
     const [orderId, setOrderId] = useState('');
-    const { cart, clearCart, getTotal } = useContext(CartContext);
+    const { cart, getTotal } = useContext(CartContext);
 
     const createOrder = async ({ name, phone, email }) => {
         setLoading(true);
