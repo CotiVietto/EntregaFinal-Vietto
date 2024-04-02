@@ -17,7 +17,11 @@ const NavBar = () => {
                         <Link to="/"><button className="font-semibold hover:text-customBlue">Promo protectores</button></Link>
                         </li>
                         <li className="border-r pr-2"></li>
-                        <li><CartWidget /></li>
+                        <li>
+                        <Link to="/cart"> 
+                        <CartWidget />
+                        </Link>
+                        </li>
                         <li className="border-r pr-2"></li>
                         <Link to="/contacto" className="hover:text-customBlue">Contacto</Link>
                     </ul>

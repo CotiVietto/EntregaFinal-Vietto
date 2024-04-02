@@ -49,18 +49,15 @@ const ItemList = () => {
 
   return (
     <div>
-
       <div>
         <img src='../src/assets/portada/portada.png' alt="Portada" className="w-full"/>
       </div>
-
       <div className="flex justify-center space-x-4 mb-4 pt-11">
         <button className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded" onClick={() => handleCategoryChange('all')}>Todos los protectores</button>
         <button className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded" onClick={() => handleCategoryChange('Protector Solar Facial')}>Protectores solares faciales</button>
         <button className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded" onClick={() => handleCategoryChange('Protector Solar Corporal')}>Protectores solares corporales</button>
       </div>
-
-      <div>
+      <div className="flex flex-wrap justify-center">
         {products.map((product) => (
           <Item
             key={product.id}
@@ -68,7 +65,7 @@ const ItemList = () => {
             img={product.img}
             name={product.name}
             price={product.price}
-            stock={product.stock}
+            off={product.off} // Pasa el descuento como una propiedad al componente Item
             category={product.category}
             filter={product.filter}
           />
@@ -79,3 +76,4 @@ const ItemList = () => {
 };
 
 export default ItemList;
+

@@ -1,7 +1,3 @@
-import { useEffect, useState } from 'react';
-import { db } from '../firebase/firebaseConfig'; 
-import { doc, getDoc } from 'firebase/firestore';
-
 const CartItem = ({ id , product }) => {
 
   return (

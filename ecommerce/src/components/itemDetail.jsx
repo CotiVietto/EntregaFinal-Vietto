@@ -19,43 +19,39 @@ const ItemDetail = ({ id, name, img, description, price, stock }) => {
   };
 
   return (
-    <article className='CardItem max-w-xl mx-auto p-4 bg-white rounded-lg shadow-lg flex'>
-      <picture className="flex-shrink-0 mr-4">
-        <img src={img} alt={name} className='ItemImg w-48 h-auto rounded-lg' />
-      </picture>
-      <div className="flex-grow">
-        <header className='Header'>
-          <h2 className='ItemHeader text-2xl font-bold text-gray-800 mb-4'>
-            {name}
-          </h2>
-        </header>
-        <section className="mt-4">
-          <p className='Info text-gray-700 text-lg'>
-            Precio: ${price}
-          </p>
-          <p className='Description text-gray-700 text-base mt-2'>
-            Descripción: {description}
-          </p>
-        </section>
+    <article className='CardItem max-w-xl mx-auto p-4 bg-white rounded-lg shadow-lg flex py-8'>
+  <picture className="flex-shrink-0 mr-4">
+    <img src={img} alt={name} className='ItemImg w-48 h-auto rounded-lg' />
+  </picture>
+  <div className="flex-grow">
+    <header className='Header'>
+      <h2 className='ItemHeader text-2xl font-bold text-gray-800 mb-4'>
+        {name}
+      </h2>
+    </header>
+    <section className="mt-4">
+      <p className='Info text-gray-700 text-lg'>
+        Precio: ${price}
+      </p>
+      <p className='Description text-gray-700 text-base mt-2'>
+        Descripción: {description}
+      </p>
+    </section>
 
+    <footer className='ItemFooter mt-4 flex justify-center'>
+      {quantityAdded > 0 ? (
+        <div className="flex">
+          <Link to='/cart' className="mr-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-3 rounded inline-block text-sm">Terminar compra</Link>
+          <Link to='/' className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-3 rounded inline-block text-sm">Seguir comprando</Link>
+        </div>
+      ) : (
+        <ItemCount initial={1} stock={stock} onAdd={handleOnAdd} />
+      )}
+    </footer>
+  </div>
+</article>
 
-        <footer className='ItemFooter mt-4 flex justify-center'>
-          {
-            quantityAdded > 0 ? (
-              <Link to='/cart' className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-3 rounded inline-block text-sm">Terminar compra</Link>
-            ) : (
-            <ItemCount initial={1} stock={stock} onAdd={handleOnAdd} />
-          )
-          } 
-        </footer>
-
-      </div>
-      
-    </article>
   );
 }
 
 export default ItemDetail;
-
-
-
