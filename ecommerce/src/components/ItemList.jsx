@@ -67,7 +67,6 @@ const ItemList = () => {
             price={product.price}
             category={product.category}
             filter={product.filter}
-            off={product.off}
           />
         ))}
       </div>

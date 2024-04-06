@@ -4,16 +4,8 @@ import CartItem from './CartItem';
 import { Link } from 'react-router-dom';
 
 const Cart = () => {
-    const { cart, clearCart, totalQuantity, getTotal, removeItem } = useContext(CartContext);
+    const { cart, clearCart, getTotal, removeItem } = useContext(CartContext);
  
-    if(totalQuantity === 0) {
-        return (
-            <div className="cart-empty">
-                <h1>No hay productos en el carrito</h1>
-                <Link to='/' className='option'>Productos</Link>
-            </div>
-        );
-    }
     return ( 
         <div className="cart-container p-10">
             { cart.map (product => (

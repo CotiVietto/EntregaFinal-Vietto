@@ -18,8 +18,9 @@ export const CartProvider = ({ children }) => {
   };
 
   const getTotal = () => {
-    return cart.reduce((total, item) => total + (item.item.price * item.quantity), 0);
-  };
+    const total = cart.reduce((total, item) => total + (item.item.price * item.quantity), 0);
+    return total.toFixed(2);
+};
 
   const removeItem = itemId => {
     const cartUpdated = cart.filter(prod => prod.item.id !== itemId);
